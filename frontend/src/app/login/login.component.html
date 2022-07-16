@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="login-full">
+       
+        <div class="form">
+            <form #f="ngForm" (ngSubmit)="submit(f.value)">
+                <div class="form-group">
+                    <!-- <div class="input-group"> -->
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                        <input type="text" name="userName" class="form-control" placeholder="Username" [(ngModel)]="userName">
+                    <!-- </div> -->
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password"> 
+                </div>
+                <div class="rows">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                    <a [routerLink]="'/signup'" >Sign Up</a>
+                </div>
+            </form>
+        </div>
+        <div class="image">
+            <img src="../../assets/flight.png" alt="flight logo">
+        </div>
+        
+        
+    </div>
+</div>
