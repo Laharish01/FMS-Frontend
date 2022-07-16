@@ -22,6 +22,16 @@ form{
     justify-content: center;
     align-items: center ;
 }
+.input-group{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.fa{
+    margin: 1rem;
+}
 
 .form-control{
     max-width: 15rem;
