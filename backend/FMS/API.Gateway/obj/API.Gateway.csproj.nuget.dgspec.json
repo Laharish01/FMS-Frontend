@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.DataLayer\\FMS.DataLayer.csproj": {}
+    "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.DataLayer\\FMS.DataLayer.csproj": {
+    "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.DataLayer\\FMS.DataLayer.csproj",
-        "projectName": "FMS.DataLayer",
-        "projectPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.DataLayer\\FMS.DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj",
+        "projectName": "API.Gateway",
+        "projectPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj",
         "packagesPath": "C:\\Users\\Laharish.S\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Laharish.S\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Ocelot": {
+              "target": "Package",
+              "version": "[16.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,6 +56,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
