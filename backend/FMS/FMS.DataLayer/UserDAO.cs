@@ -37,7 +37,7 @@ namespace FMS.DataLayer
             try
             {
                 string query = "SELECT * FROM User WHERE USER.USERNAME = @un";
-                command = new SqlCommand();
+                command = new SqlCommand(query,sqlConnection);
                 command.Parameters.AddWithValue("@un", user.username);
                 sqlConnection.Open();
                 SqlDataReader datareader = command.ExecuteReader();
