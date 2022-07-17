@@ -23,6 +23,18 @@
       ],
       "UpstreamPathTemplate": "/user/{catchall}",
       "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/booking/{catchall}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "56210"
+        }
+      ],
+      "UpstreamPathTemplate": "/booking/{catchall}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
     }
 
   ]
