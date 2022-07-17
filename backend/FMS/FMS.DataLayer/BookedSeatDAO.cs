@@ -4,7 +4,7 @@ using FMS.Entities;
 using System.Collections.Generic;
 namespace FMS.DataLayer
 {
-    class BookedSeatDAO
+    public class BookedSeatDAO
     {
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=HYD-1FVP2N3\SQLEXPRESS;Initial Catalog=AirplaneManagement;Integrated Security=True");
         SqlCommand command = null;
