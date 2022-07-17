@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj": {}
+    "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj": {
+    "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj",
+        "projectUniqueName": "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj",
         "projectName": "API.Gateway",
-        "projectPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj",
-        "packagesPath": "C:\\Users\\Laharish.S\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\obj\\",
+        "projectPath": "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\API.Gateway.csproj",
+        "packagesPath": "C:\\Users\\Shubham.Sonthalia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\API.Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Laharish.S\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shubham.Sonthalia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
         }
       }
     }
