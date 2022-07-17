@@ -55,20 +55,22 @@ namespace FMS.DataLayer
                             source = datareader[4].ToString(),
                             destination = datareader[5].ToString(),
                             departure_time = DateTime.Parse(datareader[6].ToString()),
-
-
-                        });
-                        
+                            landing_time = DateTime.Parse(datareader[7].ToString()),
+                            total_amount = (float)datareader[8],
+                            payment_mode = datareader[9].ToString()
+                        });                        
                     }
                 }
-                return userBookings;
-                
-                
+                return userBookings;       
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
             }
         }
     }
