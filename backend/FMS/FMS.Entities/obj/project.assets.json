@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Shubham.Sonthalia\\.nuget\\packages\\": {}
+    "C:\\Users\\Laharish.S\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.Entities\\FMS.Entities.csproj",
+      "projectUniqueName": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.Entities\\FMS.Entities.csproj",
       "projectName": "FMS.Entities",
-      "projectPath": "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.Entities\\FMS.Entities.csproj",
-      "packagesPath": "C:\\Users\\Shubham.Sonthalia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shubham.Sonthalia\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.Entities\\obj\\",
+      "projectPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.Entities\\FMS.Entities.csproj",
+      "packagesPath": "C:\\Users\\Laharish.S\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Laharish.S\\OneDrive - GEP\\Documents\\GitHub\\FMS-Frontend\\backend\\FMS\\FMS.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Shubham.Sonthalia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Laharish.S\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
       }
     }
   }

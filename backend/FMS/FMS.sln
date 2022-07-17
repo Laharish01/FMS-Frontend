@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMS.Entities", "FMS.Entities\FMS.Entities.csproj", "{80253638-92DE-4A4C-A545-47D6964631B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMS.Entities", "FMS.Entities\FMS.Entities.csproj", "{80253638-92DE-4A4C-A545-47D6964631B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMS.DataLayer", "FMS.DataLayer\FMS.DataLayer.csproj", "{41154A54-8D0F-44B0-8C17-32A9CC7392D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMS.DataLayer", "FMS.DataLayer\FMS.DataLayer.csproj", "{41154A54-8D0F-44B0-8C17-32A9CC7392D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Gateway", "API.Gateway\API.Gateway.csproj", "{FCEF8996-F797-4C74-BE2A-779F728C9152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Service", "Flight.Service\Flight.Service.csproj", "{A90D172F-E353-45D7-B8A4-9934BC023D89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{41154A54-8D0F-44B0-8C17-32A9CC7392D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41154A54-8D0F-44B0-8C17-32A9CC7392D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41154A54-8D0F-44B0-8C17-32A9CC7392D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEF8996-F797-4C74-BE2A-779F728C9152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCEF8996-F797-4C74-BE2A-779F728C9152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCEF8996-F797-4C74-BE2A-779F728C9152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCEF8996-F797-4C74-BE2A-779F728C9152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
