@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMS.Entities", "FMS.Entitie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMS.DataLayer", "FMS.DataLayer\FMS.DataLayer.csproj", "{41154A54-8D0F-44B0-8C17-32A9CC7392D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Gateway", "API.Gateway\API.Gateway.csproj", "{FCEF8996-F797-4C74-BE2A-779F728C9152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Gateway", "API.Gateway\API.Gateway.csproj", "{FCEF8996-F797-4C74-BE2A-779F728C9152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Service", "Flight.Service\Flight.Service.csproj", "{A90D172F-E353-45D7-B8A4-9934BC023D89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightService", "FlightService\FlightService.csproj", "{0207ADD8-F898-4ECB-B253-4107A42540A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{FCEF8996-F797-4C74-BE2A-779F728C9152}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCEF8996-F797-4C74-BE2A-779F728C9152}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCEF8996-F797-4C74-BE2A-779F728C9152}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A90D172F-E353-45D7-B8A4-9934BC023D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0207ADD8-F898-4ECB-B253-4107A42540A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0207ADD8-F898-4ECB-B253-4107A42540A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0207ADD8-F898-4ECB-B253-4107A42540A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0207ADD8-F898-4ECB-B253-4107A42540A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
