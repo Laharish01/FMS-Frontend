@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMS.DataLayer", "FMS.DataLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Gateway", "API.Gateway\API.Gateway.csproj", "{FCEF8996-F797-4C74-BE2A-779F728C9152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightService", "FlightService\FlightService.csproj", "{0207ADD8-F898-4ECB-B253-4107A42540A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightService", "FlightService\FlightService.csproj", "{0207ADD8-F898-4ECB-B253-4107A42540A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{FA937F87-8FC3-4E11-A101-FB7BA461E6AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0207ADD8-F898-4ECB-B253-4107A42540A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0207ADD8-F898-4ECB-B253-4107A42540A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0207ADD8-F898-4ECB-B253-4107A42540A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA937F87-8FC3-4E11-A101-FB7BA461E6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA937F87-8FC3-4E11-A101-FB7BA461E6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA937F87-8FC3-4E11-A101-FB7BA461E6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA937F87-8FC3-4E11-A101-FB7BA461E6AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

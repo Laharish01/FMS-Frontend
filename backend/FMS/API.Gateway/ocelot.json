@@ -2,7 +2,7 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/flight/{catchall}",
-      "DownstreamScheme":  "http",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -10,7 +10,19 @@
         }
       ],
       "UpstreamPathTemplate": "/flight/{catchall}",
-      "UpstreamHttpMethod": ["GET", "POST"]  
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/{catchall}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7607"
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{catchall}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     }
 
   ]
