@@ -21,6 +21,7 @@ namespace FlightService.Controllers
             flightDao = new FlightDAO();
         }
         //get all flights
+        [Route("getallflights")]
         [HttpGet]
         public IActionResult GetAllFlights()
         {
@@ -35,7 +36,8 @@ namespace FlightService.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        //get flights by source and destination
+        // get flights by source and destination
+        [Route("getfilteredflights")]
         [HttpGet]
         public IActionResult GetFlightBySandD(string source, string destination)
         {
@@ -50,7 +52,8 @@ namespace FlightService.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        //add flight
+       
+        [Route("addflight")]
         [HttpPost]
         public IActionResult AddFlight(Flight flight)
         {

@@ -1,15 +1,15 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/flight",
+      "DownstreamPathTemplate": "/api/flight/{catchall}",
       "DownstreamScheme":  "http",
-      "DownstreamHostsAndPorts": [
+      "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": ""
+          "Port": "20975"
         }
       ],
-      "UpstreamPathTemplate": "/flight",
+      "UpstreamPathTemplate": "/flight/{catchall}",
       "UpstreamHttpMethod": ["GET", "POST"]  
     }
 

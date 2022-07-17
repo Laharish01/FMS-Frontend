@@ -68,7 +68,7 @@ namespace FMS.DataLayer
         {
             try
             {
-                String query = "SELECT * FROM FLIGHT f JOIN SEAT s ON f.flight_id = seat.flight_id WHERE" +
+                String query = "SELECT * FROM FLIGHT f JOIN SEAT s ON f.flight_id = s.flight_id WHERE" +
                     " (f.source = @src) and (f.destination = @dest) and (s.status = 0)";
                 command = new SqlCommand(query, sqlConnection);
                 command.Parameters.AddWithValue("@src", source);
@@ -80,7 +80,7 @@ namespace FMS.DataLayer
                 {
                     while (datareader.Read())
                     {
-
+                        Console.WriteLine(datareader);
                         flights.Add(new AvailableFlightWithSeat()
                         {
                             flight_id = datareader[0].ToString(),
@@ -91,8 +91,8 @@ namespace FMS.DataLayer
                             landing_time = (DateTime)datareader[5],
                             seat_no = (int)datareader[7],
                             class_type = datareader[8].ToString(),
-                            price = (float)datareader[9],
-                            status = (int)datareader[10] == 0 ? false : true
+                            price = (double)datareader[9],
+                            status = (bool) datareader[10]
 
                         });
                     }

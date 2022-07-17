@@ -23,7 +23,8 @@ namespace API.Gateway
                     webBuilder.UseStartup<Startup>();
                 })
             .ConfigureAppConfiguration((hostingContext, config) => {
-                config.AddJsonFile("ocelot.json");
+             config.AddJsonFile("ocelot.json");
+             
             });
     }
 }

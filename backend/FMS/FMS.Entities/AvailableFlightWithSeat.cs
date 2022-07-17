@@ -14,7 +14,7 @@ namespace FMS.Entities
         public DateTime landing_time { get; set; }
         public int seat_no { get; set; }
         public string class_type { get; set; }
-        public float price { get; set; }
+        public double price { get; set; }
         public bool status { get; set; }
     }
 }
