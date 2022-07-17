@@ -13,14 +13,15 @@ namespace UserService.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        public static UserDAO userDao; 
+        public static UserDAO userDao;
         public UserController()
         {
             userDao= new UserDAO();
+           
         }
         [Route("adduser")]
         [HttpPost]
-        public IActionResult GetAllFlights(User user)
+        public IActionResult AddUser(User user)
         {
             try
             {
@@ -33,6 +34,19 @@ namespace UserService.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-
+        [Route("checkadmin")]
+        [HttpPost]
+        public IActionResult CheckAdmin(User user)
+        {
+            try
+            {
+                bool response = userDao.CheckAdmin(user);
+                return StatusCode(200, response);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            } 
+        }
     }
 }
