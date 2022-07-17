@@ -32,13 +32,13 @@ namespace FMS.DataLayer
             }
 
         }
-        public List<UserBookings> GetUserBookings(User user)
+        public List<UserBookings> GetUserBookings(string _username)
         {
             try
             {
                 string query = "select b.booking_id, b.flight_id, b.payment_id, f.flight_cmp, f.source, f.destination, f.departure_time, f.landing_time, p.total_amount, p.payment_mode from bookings b join FLIGHT f on b.flight_id = f.flight_id join Payment p on b.payment_id = p.payment_id where username = @un";
                 command = new SqlCommand(query, sqlConnection);
-                command.Parameters.AddWithValue("@un", user.username);
+                command.Parameters.AddWithValue("@un",_username);
                 sqlConnection.Open();
                 SqlDataReader datareader = command.ExecuteReader();
                 List<UserBookings> userBookings = new List<UserBookings>();
@@ -56,7 +56,7 @@ namespace FMS.DataLayer
                             destination = datareader[5].ToString(),
                             departure_time = DateTime.Parse(datareader[6].ToString()),
                             landing_time = DateTime.Parse(datareader[7].ToString()),
-                            total_amount = (float)datareader[8],
+                            total_amount = (double) datareader[8],
                             payment_mode = datareader[9].ToString()
                         });                        
                     }

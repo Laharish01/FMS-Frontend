@@ -14,7 +14,7 @@ namespace FMS.Entities
         public string destination { get; set; }
         public DateTime departure_time { get; set; }
         public DateTime landing_time { get; set; }
-        public float total_amount { get; set;  }
+        public double total_amount { get; set;  }
         public string payment_mode { get; set;  }
     }
 }

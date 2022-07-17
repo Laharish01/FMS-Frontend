@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FMS.DataLayer\FMS.DataLayer.csproj" />
+    <ProjectReference Include="..\FMS.Entities\FMS.Entities.csproj" />
+  </ItemGroup>
+
 
 </Project>

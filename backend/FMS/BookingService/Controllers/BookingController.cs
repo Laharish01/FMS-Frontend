@@ -40,13 +40,13 @@ namespace BookingService.Controllers
             }
         }
         //get user bookings
-        [Route("getuserbookings")]
+        [Route("getuserbookings/{username}")]
         [HttpGet]
-        public IActionResult GetUserBookings(User user)
+        public IActionResult GetUserBookings(string username)
         {
             try
             {
-                List<UserBookings> bookings =  BookingsDAO.GetUserBookings(user);
+                List<UserBookings> bookings =  BookingsDAO.GetUserBookings(username);
                 return StatusCode(200, bookings);
             }
             catch (Exception e)
