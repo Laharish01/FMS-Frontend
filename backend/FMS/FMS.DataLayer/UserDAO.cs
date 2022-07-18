@@ -3,11 +3,12 @@ using System.Data.SqlClient;
 using FMS.Entities;
 using System.Collections.Generic;
 
+
 namespace FMS.DataLayer
 {
     public class UserDAO
     {
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=HYD-1FVP2N3\SQLEXPRESS;Initial Catalog=AirplaneManagement;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(Environment.connection1);
         SqlCommand command = null;
 
         public void AddUser(User user)
