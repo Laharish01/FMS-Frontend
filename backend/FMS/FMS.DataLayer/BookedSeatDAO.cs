@@ -6,7 +6,7 @@ namespace FMS.DataLayer
 {
     public class BookedSeatDAO
     {
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=HYD-1FVP2N3\SQLEXPRESS;Initial Catalog=AirplaneManagement;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(Environment.connection1);
         SqlCommand command = null;
 
         public void AddBookedSeat(BookedSeats bs)
