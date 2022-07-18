@@ -7,21 +7,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BookingComponent } from './booking/booking.component';
-<<<<<<< HEAD
-import { SignUpComponent } from './sign-up/sign-up.component';
-=======
 import { AdminComponent } from './Components/admin/admin.component';
->>>>>>> be7c403ef74fe315012ba9683c7823eeebbe747b
+import { SignUpComponent } from './sign-up/sign-up.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     BookingComponent,
-<<<<<<< HEAD
-    SignUpComponent
-=======
+    SignUpComponent,
     AdminComponent
->>>>>>> be7c403ef74fe315012ba9683c7823eeebbe747b
   ],
   //import formsModule, httclient etc over here
   imports: [
