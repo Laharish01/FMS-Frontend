@@ -7,18 +7,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BookingComponent } from './booking/booking.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    BookingComponent
+    BookingComponent,
+    SignUpComponent
   ],
   //import formsModule, httclient etc over here
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, 
-    ReactiveFormsModule, 
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],  //add services here
