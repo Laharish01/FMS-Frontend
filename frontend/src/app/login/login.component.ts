@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent {
   userName: string = '';
   password: string = '';
-
+  submitted = false; 
   constructor() { }
 
-  submit(data: any){
-    console.log(data);    
+  form = new FormGroup({
+    username: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]), 
+    password: new FormControl('',[Validators.required, Validators.minLength(8)])
+  })
+
+  get f(){
+    return this.form.controls;
+  }
+
+  submit(){
+    this.submitted = true;
+    console.log(this.form.value);   
   }
 
 
