@@ -39,11 +39,11 @@ namespace FlightService.Controllers
         // get flights by source and destination
         [Route("getfilteredflights")]
         [HttpGet]
-        public IActionResult GetFlightBySandD(string source, string destination)
+        public IActionResult GetFlightBySandD(string source, string destination, string departure_time)
         {
             try
             {
-                List<AvailableFlightWithSeat> availableFlights = flightDao.GetFlightsBySandD(source, destination);
+                List<AvailableFlightWithSeat> availableFlights = flightDao.GetFlightsBySandD(source, destination, departure_time);
                 return StatusCode(200, availableFlights);
 
             }

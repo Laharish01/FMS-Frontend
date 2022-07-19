@@ -64,15 +64,16 @@ namespace FMS.DataLayer
             catch (Exception ex) { throw ex; }
             finally { sqlConnection.Close(); }
         }
-        public List<AvailableFlightWithSeat> GetFlightsBySandD(string source, string destination)
+        public List<AvailableFlightWithSeat> GetFlightsBySandD(string source, string destination, string departure_time)
         {
             try
             {
                 String query = "SELECT * FROM FLIGHT f JOIN SEAT s ON f.flight_id = s.flight_id WHERE" +
-                    " (f.source = @src) and (f.destination = @dest) and (s.status = 0)";
+                    " (f.source = @src) and (f.destination = @dest) and (s.status = 0) and (f.departure_time > @dep) ";
                 command = new SqlCommand(query, sqlConnection);
                 command.Parameters.AddWithValue("@src", source);
                 command.Parameters.AddWithValue("@dest", destination);
+                command.Parameters.AddWithValue("@dep", departure_time);
                 sqlConnection.Open();
                 SqlDataReader datareader = command.ExecuteReader();
                 List<AvailableFlightWithSeat> flights = new List<AvailableFlightWithSeat>();
