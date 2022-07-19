@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   constructor() { }
   form = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]),
-    password: new FormControl('',[Validators.required, Validators.minLength(8),Validators.pattern("/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$")]),
+    password: new FormControl('',[Validators.required, Validators.minLength(8)]),
     SeatType: new FormControl('',[Validators.required])
   })
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class SignUpComponent implements OnInit {
   submit(){
     this.submitted = true;
     console.log(this.form.value);
-    this.form.reset();
+    // this.form.reset();
 
   }
 }
