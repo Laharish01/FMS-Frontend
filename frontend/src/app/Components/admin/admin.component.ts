@@ -3,6 +3,8 @@ import { Form } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Flight } from 'src/app/Model/Flight/flight';
 import { FlightService } from 'src/app/Service/Flight/flight.service';
+import { Seat } from 'src/app/Model/Seat/seat';
+import { BookingService } from 'src/app/Service/Booking/booking.service';
 
 @Component({
   selector: 'app-admin',
@@ -12,7 +14,8 @@ import { FlightService } from 'src/app/Service/Flight/flight.service';
 export class AdminComponent implements OnInit {
   submitted = false;
   flight: Flight;
-  constructor(private flightService : FlightService) {
+  rawseats: string[];
+  constructor(private flightService : FlightService, private bookingService: BookingService) {
     this.flight = new Flight();
    }
 
@@ -28,8 +31,16 @@ export class AdminComponent implements OnInit {
     landing_time: new FormControl('', Validators.required)
   });
 
+  addseat = new FormGroup({
+    seats: new FormControl('', Validators.pattern("[E,B]\d+"))
+  });
+
   get f() {
     return this.form.controls;
+  }
+
+  get s(){
+    return this.addseat.controls;
   }
 
   addFlight() {
@@ -49,4 +60,23 @@ export class AdminComponent implements OnInit {
     this.form.reset();
   }
 
+  async addSeats(){
+    this.rawseats = this.addseat.value.seats.split(',');
+    this.rawseats.forEach(element => {      
+      var total_no = element.substring(1, );      
+      for(var i=0;i<Number(total_no);i++){
+        var seat = new Seat();
+
+        seat.flight_id = this.flight.flight_id;
+        seat.price = element[0] == 'E'? 3000 : 6000;
+        seat.seat_class = element[0] == 'E'? "Economy" : "Business";
+        seat.seat_no = i+1;
+        seat.status = false;
+
+         this.bookingService.AddSeat(seat).subscribe((response) => {
+          console.log(response);
+        });
+      }
+    });
+  }
 }

@@ -22,4 +22,12 @@
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     </form>
+
+    <form [formGroup]="addseat" (ngSubmit)="addSeats()">
+        <div class="form-group">
+            <input formControlName="seats" type="text" class="form-control"
+            placeholder="Enter type and number in format \B10,E20\ ">
+        </div>
+        <button class="btn" type="submit">Add Seats</button>
+    </form>
 </div>
