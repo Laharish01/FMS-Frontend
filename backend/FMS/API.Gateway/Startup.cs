@@ -18,6 +18,15 @@ namespace API.Gateway
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(c =>
+            {
+                c.AddPolicy("allow", options =>
+                {
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                    options.AllowAnyOrigin();
+                });
+            });
             services.AddOcelot();
         }
 
@@ -30,6 +39,8 @@ namespace API.Gateway
             }
 
             app.UseRouting();
+
+            app.UseCors("allow");
 
             app.UseEndpoints(endpoints =>
             {

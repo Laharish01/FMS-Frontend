@@ -1,7 +1,25 @@
 <div class="container">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="addFlight()">
         <div class="form-group">
             <input type="text" formControlName="flight_id" class="form-control" placeholder="Enter flight id">
         </div>
+        <div class="form-group">
+            <input type="text" formControlName="flight_cmp" class="form-control" placeholder="Enter flight company">
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="source" class="form-control" placeholder="Enter flight source">
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="destination" class="form-control"
+                placeholder="Enter flight destination">
+        </div>
+        <div class="form-group">
+            <input type="datetime" formControlName="departure_time" class="form-control"
+                placeholder="Enter departure time">
+        </div>
+        <div class="form-group">
+            <input type="datetime" formControlName="landing_time" class="form-control" placeholder="Enter landing time">
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     </form>
 </div>
