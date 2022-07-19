@@ -1,46 +1,66 @@
 <img src="../../assets/login-bg.png" alt="bg" id="bg">
+
 <div class="container">
-  <div class="login-full">
-      <div class="form">
-          <form [formGroup]="form" (ngSubmit)="submit()">
-              <div class="form-group">
-                  <div class = "input-group">
-                      <i class="fa fa-at"></i>
-                          <input
-                          type="text"
-                          formControlName ="username"
-                          id = "username"
-                          class="form-control"
-                          placeholder="Username">
-                  </div>
-                  <div *ngIf = "submitted && f['username'].invalid" class = "alert alert-danger">
-                      <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required</div>
-                      <div *ngIf="f['username'].errors && f['username'].errors['pattern']">Username must be alphanumeric</div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="input-group">
-                      <i class="fa fa-key"></i>
-                      <input
-                      type="password"
-                      formControlName ="password"
-                      class="form-control"
-                      placeholder="Password">
-                  </div>
-                  <div *ngIf="submitted && f['password'].invalid" class = "alert alert-danger">
+    <div class="login-full">
+        <div class="form">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form-group">
+                  <label>Enter Username</label>
+                    <div class = "input-group">
+                        <i class="fa fa-at"></i>
+                            <input
+                            type="text"
+                            formControlName ="username"
+                            id = "username"
+                            class="form-control"
+                            placeholder="Username">
+                    </div>
+                    <div *ngIf="submitted && f['username'].invalid" class = "alert-danger">
+                        <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required</div>
+                        <div *ngIf="f['username'].errors && f['username'].errors['pattern']">Username must be alphanumeric</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label>Enter Password</label>
+                    <div class="input-group">
+                        <i class="fa fa-key"></i>
+                        <input
+                        type="password"
+                        formControlName ="password"
+                        class="form-control"
+                        placeholder="Password">
+                    </div>
+                    <div *ngIf="submitted && f['password'].invalid" class = "alert-danger">
+                      <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required</div>
+                      <div *ngIf="f['password'].errors && f['password'].errors['pattern']">Password not vaild</div>
                       <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password must be 8 characters long</div>
-                  </div>
-              </div>
-              <div class="rows">
-                  <button class="btn btn-primary" type="submit">Login</button>
-                  <a [routerLink]="'/signup'">Sign Up</a>
-              </div>
-          </form>
-      </div>
-      <div class="image">
-          <img src="../../assets/flight.png" alt="flight logo">
+                    </div>
+                </div>
 
-      </div>
+                <div class="form-group">
+                  <label>Seat Type</label>
+                    <div class="input-group">
+                        <i class="fa fa"></i>
+                        <input type="radio" id="contactChoice1" name="SeatType" formControlName="SeatType" value="Economy" checked>
+                        <label for="Choice1">Economy Seats</label>
+                        <input type="radio" id="contactChoice2" name="SeatType" formControlName="SeatType" value="Bussines">
+                        <label for="Choice2">Bussines Seats</label>
+                    </div>
+                    <div *ngIf="submitted && f['SeatType'].invalid" class = "alert-danger">
+                      <div *ngIf="f['SeatType'].errors && f['SeatType'].errors['required']">Seat Type is required</div>
+                      </div>
+                </div>
+                <div class="rows">
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                    <a [routerLink]="'/login'">Login</a>
+                </div>
+            </form>
+        </div>
+        <div class="image">
+            <img src="../../assets/flight.png" alt="flight logo">
 
-  </div>
+        </div>
+
+    </div>
 </div>
+
