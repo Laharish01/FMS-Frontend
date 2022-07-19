@@ -18,6 +18,4 @@ export class FlightService {
   GetFilteredFlights(source:string, destination:string):Observable<Availableflightwithseat[]>{
     return this.httpClient.get<Availableflightwithseat[]>(this.api_url + 'getfilteredflights?source=' + source + '&destination=' + destination);
   }
-  
-
 }
