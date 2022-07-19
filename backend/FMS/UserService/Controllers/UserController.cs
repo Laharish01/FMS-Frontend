@@ -48,5 +48,19 @@ namespace UserService.Controllers
                 return StatusCode(500, e.Message);
             } 
         }
+        [Route("checkuser/{username}")]
+        [HttpGet]
+        public IActionResult CheckUser(String username)
+        {
+            try
+            {
+                bool response = userDao.CheckUser(username);
+                return StatusCode(200, response);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }

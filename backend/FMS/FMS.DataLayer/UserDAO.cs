@@ -61,6 +61,31 @@ namespace FMS.DataLayer
                 sqlConnection.Close();
             }  
         }
+        public bool CheckUser(string username)
+        {
+            try
+            {
+                string query = "SELECT * FROM User WHERE USER.USERNAME = @un";
+                command = new SqlCommand(query, sqlConnection);
+                command.Parameters.AddWithValue("@un", username);
+                sqlConnection.Open();
+                SqlDataReader datareader = command.ExecuteReader();
+                if (datareader.HasRows)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+        }
 
 
     }
