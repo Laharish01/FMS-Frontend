@@ -21,6 +21,7 @@ export class AdminComponent implements OnInit {
   source: string;
   destination: string;
   departure_time: Date;
+  available_seats:number;
   constructor(private flightService : FlightService, private bookingService: BookingService) {
     this.flight = new Flight();
     this.flightService.GetAllFlights().subscribe(response => {
@@ -93,6 +94,9 @@ export class AdminComponent implements OnInit {
     this.flightService.GetFilteredFlights(this.source, this.destination, this.departure_time).subscribe(response => {
       this.available_flights = response;
     });
+    this.flightService.GetCount("6E4567").subscribe(response => {
+      this.available_seats = response;
+    })
     
   }
 }

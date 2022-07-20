@@ -54,6 +54,7 @@
                 <th>Destination</th>
                 <th>Departure Time</th>
                 <th>Landing Time</th>
+                <th>Available Seats</th>
             </tr>
             </thead>
             <tbody>
@@ -64,7 +65,7 @@
                     <td>{{flight.destination}}</td>
                     <td>{{flight.departure_time | date:'short'}}</td>
                     <td>{{flight.landing_time | date:'short'}}</td>
-                    <!-- <td>{{available_seats}}</td> -->
+                    <td>{{available_seats}}</td>
                 </tr>
                 
             </tbody>

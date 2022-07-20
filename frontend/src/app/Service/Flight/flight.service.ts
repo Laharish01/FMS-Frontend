@@ -21,4 +21,7 @@ export class FlightService {
   AddFlight(flight: Flight):Observable<any>{
     return this.httpClient.post(this.api_url + "addflight", flight);
   }
+  GetCount(flight_id:string):Observable<any>{
+    return this.httpClient.get(this.api_url  + "getcount/" + flight_id);
+  }
 }
