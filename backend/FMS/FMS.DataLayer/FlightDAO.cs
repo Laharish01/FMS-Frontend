@@ -103,6 +103,28 @@ namespace FMS.DataLayer
             catch (Exception ex) { throw ex; }
             finally { sqlConnection.Close(); }
         }
-    }
 
+        public int GetAvailableSeats(string flight_id)
+        {
+            try
+            {
+                String query = "SELECT count(*) FROM SEAT WHERE flight_id = @id and status = 0";
+                command = new SqlCommand(query, sqlConnection);
+                command.Parameters.AddWithValue("@id", flight_id);
+                sqlConnection.Open();
+                var sqldatareader = command.ExecuteScalar();
+                if (sqldatareader != null)
+                {
+                    return (int)sqldatareader;
+                }
+                return 0;
+            }
+            catch (Exception ex) { throw ex; }
+            finally { sqlConnection.Close(); }
+        }
+
+
+    }
 }
+
+

@@ -67,5 +67,21 @@ namespace FlightService.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+
+        [Route("getcount/{flight_id}")]
+        [HttpGet]
+        public IActionResult GetCount(string flight_id)
+        {
+            try
+            {
+                int res = flightDao.GetAvailableSeats(flight_id);
+                return StatusCode(200, res);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message); 
+            }
+            
+        }
     }
 }
