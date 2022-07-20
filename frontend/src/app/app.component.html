@@ -1,15 +1,13 @@
 <div class="main">
   <header>
-    <mat-toolbar class="mat-elevation-z8">
-      <span color>
-        <mat-icon>flight_takeoff</mat-icon>FLIGHT MANAGEMENT SYSTEM
-      </span>
-      <div class="Spacer"></div>
-      <a class="nav-item nav-link active" routerLink="home">Home</a>
+    <span class="icon" color>
+      <mat-icon>flight_takeoff</mat-icon>FLIGHT MANAGEMENT SYSTEM
+    </span>
+    <div class="nav-links">
+      <a class="nav-item nav-link" routerLink="home">Home</a>
       <a class="nav-item nav-link" routerLink="profile">Profile</a>
-      <a class="nav-item nav-link" routerLink="book">Booking</a>
       <a class="nav-item nav-link" routerLink="login">Login</a>
-    </mat-toolbar>
+    </div>
   </header>
 
   <router-outlet>

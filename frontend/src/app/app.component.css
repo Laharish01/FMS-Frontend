@@ -1,58 +1,39 @@
-/* .mat-elevation-z8{
-    border: 1px solid gray;
-    width: auto;
-    height: auto;
-    padding: 10px;
-  }
-  .Spacer
-  {
-    flex:1 1 auto;
-  }
-  a{
-    display: inline;
-    color: black;
-    margin: 10px;
-    text-decoration: none;
-  }
-  body
-  {
-    border: 1pxsolid gray;
-    width: auto;
-    height: 420px;
-    padding: 10px;
-    background-color: white;
-  }
-  footer
-  {
-    height: 10px;
-    text-align: center;
-    bottom: 0%;} */
-
-.main{
+.main {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  outline: 1px solid red;
 }
-header{
+
+header {
   height: 10vh;
-  background-color:#27379b ;
+  background-color: #27379b;
   color: white;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.Spacer
-  {
-    flex:1 1 auto;
-  }
+.icon{
+  margin-left: 0.5rem;
+}
 
-a{
+a {
   color: white;
 }
-  
-footer{
+
+.nav-links {
+  margin-left: auto;
+  display: flex;
+}
+
+footer {
   background-color: #27379b;
   color: white;
   text-align: center;
+  height: 5vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
 }

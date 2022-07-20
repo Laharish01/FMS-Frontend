@@ -5,7 +5,7 @@
         <div class="form">
             <form [formGroup]="form" (ngSubmit)="submit()">
                 <div class="form-group">
-                  <label>Enter Username</label>
+                  <!-- <label>Enter Username</label> -->
                     <div class = "input-group">
                         <i class="fa fa-at"></i>
                             <input
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                  <label>Enter Password</label>
+                  <!-- <label>Enter Password</label> -->
                     <div class="input-group">
                         <i class="fa fa-key"></i>
                         <input
@@ -47,7 +47,7 @@
                         <pre>   </pre>
                         <input type="radio" id="contactChoice2" name="SeatType" formControlName="SeatType" value="Bussines">
                         <pre> </pre>
-                        <label for="Choice2">Bussines</label>
+                        <label for="Choice2">Business</label>
                     </div>
                     <div *ngIf="submitted && f['SeatType'].invalid" class = "alert-danger">
                       <div *ngIf="f['SeatType'].errors && f['SeatType'].errors['required']">Seat Type is required</div>
