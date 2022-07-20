@@ -5,6 +5,7 @@ import { Flight } from 'src/app/Model/Flight/flight';
 import { FlightService } from 'src/app/Service/Flight/flight.service';
 import { Seat } from 'src/app/Model/Seat/seat';
 import { BookingService } from 'src/app/Service/Booking/booking.service';
+import { Availableflightwithseat } from 'src/app/Model/AvailableFlightWithSeat/availableflightwithseat';
 
 @Component({
   selector: 'app-admin',
@@ -15,8 +16,16 @@ export class AdminComponent implements OnInit {
   submitted = false;
   flight: Flight;
   rawseats: string[];
+  all_flights: Flight[];
+  available_flights: Availableflightwithseat[];
+  source: string;
+  destination: string;
+  departure_time: Date;
   constructor(private flightService : FlightService, private bookingService: BookingService) {
     this.flight = new Flight();
+    this.flightService.GetAllFlights().subscribe(response => {
+      this.all_flights = response;
+    })
    }
 
   ngOnInit(): void {
@@ -67,7 +76,8 @@ export class AdminComponent implements OnInit {
       for(var i=0;i<Number(total_no);i++){
         var seat = new Seat();
 
-        seat.flight_id = this.flight.flight_id;
+        // seat.flight_id = this.flight.flight_id;
+        seat.flight_id = "6E4569"
         seat.price = element[0] == 'E'? 3000 : 6000;
         seat.seat_class = element[0] == 'E'? "Economy" : "Business";
         seat.seat_no = i+1;
@@ -78,5 +88,11 @@ export class AdminComponent implements OnInit {
         });
       }
     });
+  }
+  getFlightList(){    
+    this.flightService.GetFilteredFlights(this.source, this.destination, this.departure_time).subscribe(response => {
+      this.available_flights = response;
+    });
+    
   }
 }
