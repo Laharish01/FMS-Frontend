@@ -104,13 +104,14 @@ namespace FMS.DataLayer
             finally { sqlConnection.Close(); }
         }
 
-        public int GetAvailableSeats(string flight_id)
+        public int GetAvailableSeats(string flight_id, string _class)
         {
             try
             {
-                String query = "SELECT count(*) FROM SEAT WHERE flight_id = @id and status = 0";
+                String query = "SELECT count(*) FROM SEAT WHERE flight_id = @id and status = 0 and class = @class";
                 command = new SqlCommand(query, sqlConnection);
                 command.Parameters.AddWithValue("@id", flight_id);
+                command.Parameters.AddWithValue("@class", _class);
                 sqlConnection.Open();
                 var sqldatareader = command.ExecuteScalar();
                 if (sqldatareader != null)
