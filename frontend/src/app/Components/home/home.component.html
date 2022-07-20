@@ -1,81 +1,78 @@
 <!--img src="../../assets/image/login-bg.png" alt="bg" id="bg"-->
-<body>
+
     <div class="div1">
       <div class="login-full">
       <div class="form">
         <form [formGroup]="form" (ngSubmit)="submit()">
           <h1>Search Flights</h1>
           <h2>Fly anywhere. Fly everywhere</h2>
-          <div class="form-group">
-            <div class="radio">
-              <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oneway</mat-radio-button>
-              <mat-radio-button value="2">Return Trip</mat-radio-button>
-              </mat-radio-group>
-            </div>
-    
-          <div class="form-group">
-            <div class="input-group">
-              <label for="">&#9992;Source:</label>
-              <i class="fa fa-at"></i>
-              <input
-              list="data2"
-              id="source"
-              formControlName="source"
-              class="form-control"
-              placeholder="Enter Source"
-              autocomplete="off">
-              <datalist id="data2">
-                <option *ngFor="let item of city" [value]="item.name">
-                  {{item.name}}
-                </option>
-              </datalist>
-            </div>
-          </div>
-            <div *ngIf = "submitted && f['source'].invalid" class = "alert alert-danger">
-              <div *ngIf="f['source'].errors && f['source'].errors['required']">Source is invalid</div>
-            </div>
-          <div class="form-group">
-            <div class="input-group">
-              <label for="">&#9992;Destination:
-              <i class="fa fa-at"></i>
-              <input
-              list="data"
-              id="destination"
-              formControlName="destination"
-              class="form-control"
-              placeholder="Enter Destination"
-              autocomplete="off"></label>
-              <datalist id="data">
-                <option *ngFor="let item of city" [value]="item.name">
-                  {{item.name}}
-                </option>
+
+          <div class="srcanddest">
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                list="data2"
+                id="source"
+                formControlName="source"
+                class="form-control"
+                placeholder="From"
+                autocomplete="off">
+                <datalist id="data2">
+                  <option *ngFor="let item of city" [value]="item.name">
+                    {{item.name}}
+                  </option>
                 </datalist>
+              </div>
             </div>
-    
-            <div *ngIf = "submitted && f['source'].invalid" class = "alert alert-danger">
-              <div *ngIf="f['source'].errors && f['source'].errors['required']">Destination is invalid</div>
+              <div *ngIf = "submitted && f['source'].invalid" class = "alert alert-danger">
+                <div *ngIf="f['source'].errors && f['source'].errors['required']">Source is invalid</div>
+              </div>
+              <i class="icon fa-solid fa-arrow-right-arrow-left"></i>
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                list="data"
+                id="destination"
+                formControlName="destination"
+                class="form-control"
+                placeholder="To"
+                autocomplete="off">
+                <datalist id="data">
+                  <option *ngFor="let item of city" [value]="item.name">
+                    {{item.name}}
+                  </option>
+                  </datalist>
+              </div>
+      
+              <div *ngIf = "submitted && f['source'].invalid" class = "alert alert-danger">
+                <div *ngIf="f['source'].errors && f['source'].errors['required']">Destination is invalid</div>
+              </div>
             </div>
           </div>
     
-          <mat-form-field appearance="outline">
-            <mat-label>Date</mat-label>
-            <input matInput [matDatepicker]="myDataPicker">
-            <mat-datepicker-toggle [for]="myDataPicker" matSuffix></mat-datepicker-toggle>
-            <mat-datepicker #myDataPicker startView="year"></mat-datepicker>
-          </mat-form-field>
+          
+          
+          <!-- <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="myDataPicker">
+              <mat-datepicker-toggle [for]="myDataPicker" matSuffix></mat-datepicker-toggle>
+              <mat-datepicker #myDataPicker startView="year"></mat-datepicker>
+            </mat-form-field>
+          </div> -->
+
+          <div class="form-group">
+            <input type="date" class="departure_time" formControlName="departure_time" name="departuretime" [(ngModel)]="departure_time">
+          </div>
+          
     
           <div class="rows">
             <button mat-raised-button color="primary" type="submit">Submit</button>
             </div>
-          </div>
         </form>
       </div>
-      <div class="image">
-        <img src="../../../assets/flight.png">
-      </div>
+
     </div>
     </div>
-    
-    </body>
+
     

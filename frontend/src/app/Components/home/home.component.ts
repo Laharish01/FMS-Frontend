@@ -12,9 +12,11 @@ export class HomeComponent implements OnInit {
   destination:string='';
   submitted=false;
   city:Cities[];
+  departure_time: Date;
   form = new FormGroup({
   source: new FormControl('',[Validators.required, Validators.minLength(3)]),
-  destination: new FormControl('',[Validators.required, Validators.minLength(3)])
+  destination: new FormControl('',[Validators.required, Validators.minLength(3)]),
+  departure_time: new FormControl(Date, [Validators.required])
   })
 
   constructor() {
