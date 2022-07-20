@@ -1,0 +1,30 @@
+.mat-elevation-z8{
+    border: 1px solid gray;
+    width: auto;
+    height: auto;
+    padding: 10px;
+  }
+  .Spacer
+  {
+    flex:1 1 auto;
+  }
+  a{
+    display: inline;
+    color: black;
+    margin: 10px;
+    text-decoration: none;
+  }
+  body
+  {
+    border: 1pxsolid gray;
+    width: auto;
+    height: 420px;
+    padding: 10px;
+    background-color: white;
+  }
+  footer
+  {
+    height: 10px;
+    text-align: center;
+    bottom: 0%;}
+  

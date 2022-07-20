@@ -25,8 +25,8 @@ export class PaymentsComponent implements OnInit {
     });
 
     paymentHandler.open({
-      name: 'FreakyJolly',
-      description: 'Buying a Hot Coffee',
+      name: 'Concept Squad',
+      description: 'Booking flights at the best rates!!',
       amount: amount * 100,
     });
   }
@@ -39,7 +39,7 @@ export class PaymentsComponent implements OnInit {
       script.src = 'https://checkout.stripe.com/checkout.js';
       script.onload = () => {
         this.paymentHandler = (<any>window).StripeCheckout.configure({
-          key: 'pk_test_sLUqHXtqXOkwSdPosC8ZikQ800snMatYMb',
+          key: 'pk_test_51KFG5eSBjSw1UXqU0bmIQ2IjKwPEAAtoNZDZBY8G2kbcmFRXZ6fMapBAM66AMVGQeRvhD3QarzzLEDjJejJqmQXt00QLEzsHLi',
           locale: 'auto',
           token: function (stripeToken: any) {
             console.log(stripeToken);

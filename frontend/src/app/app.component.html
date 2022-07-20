@@ -1,3 +1,19 @@
-<router-outlet></router-outlet>
-<!-- <app-login></app-login> -->
-<!-- <app-sign-up></app-sign-up> -->
+
+<header>
+    <mat-toolbar color="#4B0082" class="mat-elevation-z8">
+  
+      <span color><mat-icon>flight_takeoff</mat-icon>FLIGHT MANAGEMENT SYSTEM</span>
+      <div class="Spacer"></div>
+        <a class="nav-item nav-link active" routerLink="home">Home</a>
+        <a class="nav-item nav-link" routerLink="profile">Profile</a>
+        <a class="nav-item nav-link" routerLink="book">Booking</a>
+        <a class="nav-item nav-link" routerLink="login">Login</a>
+  </mat-toolbar>
+  </header>
+  
+  <router-outlet>
+  </router-outlet>
+  <footer>
+    <mat-toolbar color="#4B0082" class="mat-elevation-z9" > &copy;ConceptSquad 2022</mat-toolbar>
+</footer>
+  

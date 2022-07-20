@@ -1,0 +1,62 @@
+body{
+    background-color: lightgrey;
+  }
+  
+  .div1 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-full {
+    width: 60rem;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+  }
+  #bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .form {
+    width: 50%;
+    background-color: white;
+  }
+  form {
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .fa {
+    margin: 1rem;
+  }
+  
+  .form-control {
+    max-width: 15rem;
+    margin: 1rem;
+  }
+  .image {
+    width: 50%;
+  }
+  
+  img {
+    max-width: 30rem;
+  }
+  
+  

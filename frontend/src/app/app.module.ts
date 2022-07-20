@@ -13,6 +13,20 @@ import { FlightService } from './Service/Flight/flight.service';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PaymentsComponent } from './Components/payments/payments.component';
+import { HomeComponent } from './Components/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIcon, MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
+import { NotfoundComponent } from './Components/notfound/notfound.component';
+import { UserprofileComponent } from './Components/userprofile/userprofile.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +34,10 @@ import { PaymentsComponent } from './Components/payments/payments.component';
     BookingComponent,
     SignUpComponent,
     AdminComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    HomeComponent,
+    NotfoundComponent,
+    UserprofileComponent
   ],
   //import formsModule, httclient etc over here
   imports: [
@@ -28,7 +45,16 @@ import { PaymentsComponent } from './Components/payments/payments.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    BrowserAnimationsModule, 
+    MatToolbarModule, 
+    MatIconModule, 
+    MatDatepickerModule, 
+    MatNativeDateModule, 
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatButtonModule, 
+    MatRadioModule
   ],
   providers: [UserService, BookingService, FlightService],  //add services here
   bootstrap: [AppComponent]
