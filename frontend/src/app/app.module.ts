@@ -12,13 +12,15 @@ import { BookingService } from './Service/Booking/booking.service';
 import { FlightService } from './Service/Flight/flight.service';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { PaymentsComponent } from './Components/payments/payments.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     BookingComponent,
     SignUpComponent,
-    AdminComponent
+    AdminComponent,
+    PaymentsComponent
   ],
   //import formsModule, httclient etc over here
   imports: [
