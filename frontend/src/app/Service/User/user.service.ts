@@ -17,4 +17,10 @@ export class UserService {
   CheckAdmin(user:User):Observable<any>{
     return this.httpClient.post(this.api_url + 'checkadmin', user);
   }
+  CheckUser(username:string):Observable<any>{
+    return this.httpClient.get(this.api_url + "checkuser/" + username);
+  }
+  GetUser(username:string):Observable<User>{
+    return this.httpClient.get<User>(this.api_url + "getuserbyname/" + username);
+  }
 }

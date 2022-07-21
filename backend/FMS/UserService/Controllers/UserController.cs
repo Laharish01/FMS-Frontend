@@ -16,8 +16,8 @@ namespace UserService.Controllers
         public static UserDAO userDao;
         public UserController()
         {
-            userDao= new UserDAO();
-           
+            userDao = new UserDAO();
+
         }
         [Route("adduser")]
         [HttpPost]
@@ -46,7 +46,7 @@ namespace UserService.Controllers
             catch (Exception e)
             {
                 return StatusCode(500, e.Message);
-            } 
+            }
         }
         [Route("checkuser/{username}")]
         [HttpGet]
@@ -61,6 +61,22 @@ namespace UserService.Controllers
             {
                 return StatusCode(500, e.Message);
             }
+        }
+
+        [Route("getuserbyname/{username}")]
+        [HttpGet]
+        public IActionResult GetUser(String username)
+        {
+            try
+            {
+                User user = userDao.GetUser(username);
+                return StatusCode(200, user);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            
         }
     }
 }

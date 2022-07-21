@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: 'book', component:BookingComponent},
   {path: 'payment', component:PaymentsComponent}, 
   {path:'home/:un', component:HomeComponent},
+  {path:'admin/:un', component:AdminComponent}, 
   {path: '', pathMatch:'full', redirectTo: 'home'}
 ];
 

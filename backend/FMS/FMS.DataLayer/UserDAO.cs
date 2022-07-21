@@ -37,7 +37,7 @@ namespace FMS.DataLayer
         {
             try
             {
-                string query = "SELECT * FROM User WHERE USER.USERNAME = @un";
+                string query = "SELECT * FROM [User] WHERE USER.USERNAME = @un";
                 command = new SqlCommand(query,sqlConnection);
                 command.Parameters.AddWithValue("@un", user.username);
                 sqlConnection.Open();
@@ -65,7 +65,7 @@ namespace FMS.DataLayer
         {
             try
             {
-                string query = "SELECT * FROM User WHERE USER.USERNAME = @un";
+                string query = "SELECT * FROM [User] WHERE USERNAME = @un";
                 command = new SqlCommand(query, sqlConnection);
                 command.Parameters.AddWithValue("@un", username);
                 sqlConnection.Open();
@@ -85,6 +85,37 @@ namespace FMS.DataLayer
                 sqlConnection.Close();
             }
 
+        }
+
+        public User GetUser(string username)
+        {
+            try
+            {
+                string query = "SELECT * FROM [USER] WHERE username = @un";
+                command = new SqlCommand(query, sqlConnection);
+                command.Parameters.AddWithValue("@un", username);
+                sqlConnection.Open();
+                SqlDataReader datareader = command.ExecuteReader();
+                User user = new User();
+                if (datareader.HasRows)
+                {
+                    datareader.Read();
+                    user.username = datareader[0].ToString();
+                    user.password = datareader[1].ToString();
+                    user.seat_preference = datareader[2].ToString();
+                    user.role = datareader[3].ToString();
+                    return user;
+                }
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw ex; 
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
 
