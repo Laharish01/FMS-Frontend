@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import {FormGroup, Validators} from '@angular/forms';
 import { User } from '../Model/User/user';
 import { UserService } from '../Service/User/user.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -14,7 +15,7 @@ export class SignUpComponent implements OnInit {
   SeatType:String='';
   user:User; 
   submitted = false;
-  constructor(private userService:UserService) { 
+  constructor(private userService:UserService, private router:Router) { 
     this.user = new User(); 
     this.user.role = "Customer";
   }
@@ -31,23 +32,23 @@ export class SignUpComponent implements OnInit {
 
   submit(){
     this.submitted = true;
-    if(!this.form.controls.username.errors){
-      this.user.username = this.form.value['username'];
-    }
-    if (!this.form.controls.password.errors){
-      this.user.password = this.form.value['password']; 
-    }
-    if(!this.form.controls.SeatType.errors){
+    if(!this.form.controls.SeatType.errors && !this.form.controls.username.errors && !this.form.controls.password.errors){
       this.user.seat_preference = this.form.value['SeatType'];
-    }
-    console.log(this.user);
-    this.userService.AddUser(this.user).subscribe(response => {
-        console.log(response);
-    }, error => {
-      alert(error.message);
-      this.user = new User(); 
-      this.user.role = "Customer"
-      this.submitted = false; 
-    });
+      this.user.password = this.form.value['password']; 
+      this.user.username = this.form.value['username'];
+      console.log(this.user);
+      this.userService.AddUser(this.user).subscribe(response => {
+          alert("Sucessfully signed up!!");
+          this.router.navigateByUrl('home/' + this.user.username);
+  
+      }, error => {
+        console.log(error);
+        alert("Username already exists. Please enter another username");
+        this.form.reset();
+        this.user = new User(); 
+        this.user.role = "Customer"
+        this.submitted = false; 
+      });
+    } 
   }
 }
