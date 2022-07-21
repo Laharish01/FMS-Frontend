@@ -93,13 +93,13 @@ export class AdminComponent implements OnInit {
     });
   }
   getFlightList() {
-    this.flightService
-      .GetFilteredFlights(this.source, this.destination, this.departure_time)
-      .subscribe((response) => {
-        this.available_flights = response;
-      });
-    this.flightService.GetCount('6E4567').subscribe((response) => {
-      this.available_seats = response;
-    });
+    // this.flightService
+    //   .GetFilteredFlights(this.source, this.destination, this.departure_time)
+    //   .subscribe((response) => {
+    //     this.available_flights = response;
+    //   });
+    // this.flightService.GetCount('6E4567').subscribe((response) => {
+    //   this.available_seats = response;
+    // });
   }
 }

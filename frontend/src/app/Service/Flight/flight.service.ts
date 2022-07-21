@@ -15,13 +15,13 @@ export class FlightService {
   GetAllFlights():Observable<Flight[]>{
     return this.httpClient.get<Flight[]>(this.api_url + 'getallflights')
   }
-  GetFilteredFlights(source:string, destination:string, departure_time:Date):Observable<Availableflightwithseat[]>{
+  GetFilteredFlights(source:string, destination:string, departure_time:string):Observable<Availableflightwithseat[]>{
     return this.httpClient.get<Availableflightwithseat[]>(this.api_url + 'getfilteredflights?source=' + source + '&destination=' + destination + '&departure_time=' + departure_time+'T00:00:00');
   }
   AddFlight(flight: Flight):Observable<any>{
     return this.httpClient.post(this.api_url + "addflight", flight);
   }
-  GetCount(flight_id:string):Observable<any>{
-    return this.httpClient.get(this.api_url  + "getcount/" + flight_id);
+  GetCount(flight_id:string, class_type: string):Observable<any>{
+    return this.httpClient.get(this.api_url  + "getcount/" + flight_id + '/' + class_type);
   }
 }

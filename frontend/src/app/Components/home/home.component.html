@@ -70,6 +70,7 @@
           <td>{{flight.departure_time | date:'short'}}</td>
           <td>{{flight.landing_time | date:'short'}}</td>
           <td>{{available_seats}}</td>
+          <td><button class="btn" (onclick)="book()">Book</button></td>
         </tr>
 
       </tbody>
