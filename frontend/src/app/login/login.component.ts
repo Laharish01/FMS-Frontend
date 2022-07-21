@@ -16,7 +16,9 @@ export class LoginComponent {
   user:User; 
   // users: User[]
   submitted = false;
-  constructor(private userService:UserService, private router:Router) {}
+  constructor(private userService:UserService, private router:Router) {
+    localStorage.setItem('username', "");
+  }
 
   form = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]),
@@ -40,7 +42,8 @@ export class LoginComponent {
                   this.router.navigateByUrl("admin/" + this.user.username);
                 }
                 else{
-                  this.router.navigateByUrl("home/" + this.user.username);
+                  localStorage.setItem('username', this.user.username);
+                  this.router.navigateByUrl("home/" + localStorage.getItem('username'));
                 }
               }
               else{

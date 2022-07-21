@@ -5,6 +5,7 @@ import { Cities } from 'src/app/Model/Cities/cities';
 import { User } from 'src/app/Model/User/user';
 import { FlightService } from 'src/app/Service/Flight/flight.service';
 import {Router, ActivatedRoute} from "@angular/router";
+import { map, delay } from "rxjs/operators";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -34,24 +35,19 @@ export class HomeComponent implements OnInit {
       { name: 'Bangalore' },
       { name: 'Jaipur' },
     ];
-    this.activatedRoute.params.subscribe(p => this.username = p['un']);
+    this.username = localStorage.getItem("username");
   }
   get f() {
     return this.form.controls;
   }
-  submit() {
+  async submit() {
     this.submitted = true;
     // console.log(this.form.value);
     //set this in service subscribe call to display the table 
     this.flights = true;
       
-      this.flightService.GetFilteredFlights(this.source, this.destination, this.departure_time).subscribe(response => {
-        this.available_flights = response;
-      });
-      this.flightService.GetCount("6E4567").subscribe(response => {
-        this.available_seats = response;
-      })
-      
+      this.available_flights = await this.flightService.GetFilteredFlights(this.source, this.destination, this.departure_time).pipe(delay(1000)).toPromise();
+      this.available_seats = await this.flightService.GetCount("6E4567").pipe(delay(1000)).toPromise();  
   }
   ngOnInit(): void {
   }
