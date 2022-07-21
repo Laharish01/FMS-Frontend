@@ -39,7 +39,8 @@ export class SignUpComponent implements OnInit {
       console.log(this.user);
       this.userService.AddUser(this.user).subscribe(response => {
           alert("Sucessfully signed up!!");
-          this.router.navigateByUrl('home/' + this.user.username);
+          localStorage.setItem("username", this.user.username);
+          this.router.navigateByUrl('home');
   
       }, error => {
         console.log(error);
