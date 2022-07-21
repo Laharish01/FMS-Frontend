@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'payment', component:PaymentsComponent}, 
   {path:'home/:un', component:HomeComponent},
   {path:'admin/:un', component:AdminComponent}, 
-  {path: '', pathMatch:'full', redirectTo: 'home'}
+  {path: '', pathMatch:'full', redirectTo: 'login'}
 ];
 
 @NgModule({

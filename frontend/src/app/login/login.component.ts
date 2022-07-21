@@ -45,7 +45,8 @@ export class LoginComponent {
               }
               else{
                 alert("Incorrect Password"); 
-                this.form.value.password = "";
+                this.form.reset();
+                this.submitted  = false;
               } 
             }
         }
