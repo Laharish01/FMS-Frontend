@@ -15,10 +15,10 @@ namespace FMS.DataLayer
         {
             try
             {
-                string query = "INSERT INTO USER (username, password, seat_preference, role) VALUES (@un, @pwd, @seat_pref, @role)";
+                string query = "INSERT INTO [USER] (username, password, seat_preference, role) VALUES (@un, @pwd, @seat_pref, @role)";
                 command = new SqlCommand(query, sqlConnection);
                 command.Parameters.AddWithValue("@un", user.username);
-                command.Parameters.AddWithValue("@pwd", user.seat_preference);
+                command.Parameters.AddWithValue("@pwd", user.password);
                 command.Parameters.AddWithValue("@seat_pref", user.seat_preference);
                 command.Parameters.AddWithValue("@role", user.role);
                 sqlConnection.Open();

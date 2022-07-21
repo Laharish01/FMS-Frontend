@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {FormGroup, Validators} from '@angular/forms';
+import { User } from '../Model/User/user';
+import { UserService } from '../Service/User/user.service';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,8 +12,12 @@ export class SignUpComponent implements OnInit {
   username: string = '';
   password: string = '';
   SeatType:String='';
+  user:User; 
   submitted = false;
-  constructor() { }
+  constructor(private userService:UserService) { 
+    this.user = new User(); 
+    this.user.role = "Customer";
+  }
   form = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]),
     password: new FormControl('',[Validators.required, Validators.minLength(8)]),
@@ -25,8 +31,23 @@ export class SignUpComponent implements OnInit {
 
   submit(){
     this.submitted = true;
-    console.log(this.form.value);
-    // this.form.reset();
-
+    if(!this.form.controls.username.errors){
+      this.user.username = this.form.value['username'];
+    }
+    if (!this.form.controls.password.errors){
+      this.user.password = this.form.value['password']; 
+    }
+    if(!this.form.controls.SeatType.errors){
+      this.user.seat_preference = this.form.value['SeatType'];
+    }
+    console.log(this.user);
+    this.userService.AddUser(this.user).subscribe(response => {
+        console.log(response);
+    }, error => {
+      alert(error.message);
+      this.user = new User(); 
+      this.user.role = "Customer"
+      this.submitted = false; 
+    });
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Availableflightwithseat } from 'src/app/Model/AvailableFlightWithSeat/availableflightwithseat';
 import { Cities } from 'src/app/Model/Cities/cities';
+import { FlightService } from 'src/app/Service/Flight/flight.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
     departure_time: new FormControl(Date, [Validators.required])
   })
 
-  constructor() {
+  constructor(private flightService:FlightService) {
     this.city = [
       { name: 'Delhi' },
       { name: 'Mumbai' },
@@ -40,6 +41,14 @@ export class HomeComponent implements OnInit {
     // console.log(this.form.value);
     //set this in service subscribe call to display the table 
     this.flights = true;
+      
+      this.flightService.GetFilteredFlights(this.source, this.destination, this.departure_time).subscribe(response => {
+        this.available_flights = response;
+      });
+      this.flightService.GetCount("6E4567").subscribe(response => {
+        this.available_seats = response;
+      })
+      
   }
   ngOnInit(): void {
   }
