@@ -6,7 +6,8 @@
     <div class="nav-links">
       <a class="nav-item nav-link" routerLink="home">Home</a>
       <a class="nav-item nav-link" routerLink="profile">Profile</a>
-      <a class="nav-item nav-link" routerLink="login">Logout</a>
+      <a class="nav-item nav-link" routerLink="login" *ngIf="username == ''">Login</a>
+      <a class="nav-item nav-link" routerLink="login" *ngIf="username">Logout</a>
     </div>
   </header>
   <router-outlet>

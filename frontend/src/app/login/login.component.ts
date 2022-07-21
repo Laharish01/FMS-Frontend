@@ -17,7 +17,7 @@ export class LoginComponent {
   // users: User[]
   submitted = false;
   constructor(private userService:UserService, private router:Router) {
-    localStorage.setItem('username', "");
+    localStorage.setItem("username", '');
   }
 
   form = new FormGroup({
@@ -43,7 +43,7 @@ export class LoginComponent {
                 }
                 else{
                   localStorage.setItem('username', this.user.username);
-                  this.router.navigateByUrl("home/" + localStorage.getItem('username'));
+                  this.router.navigateByUrl("home");
                 }
               }
               else{
