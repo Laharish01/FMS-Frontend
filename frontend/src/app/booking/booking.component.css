@@ -1,3 +1,39 @@
 .main{
-    height: 85vh;
+    min-height: 85vh;
+}
+
+h1{
+    text-align: center;
+}
+
+.booking{
+    display: flex;
+    
+}
+
+.booking-info{
+    width: 70%;
+    outline: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+.srcandd{
+    margin: auto;
+
+}
+
+.payment-button{
+    width: 30%;
+    outline: 1px solid green;
+    display: flex;
+    
+    /* margin: auto; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirm{
+    display: flex;
+    justify-content: center;
 }

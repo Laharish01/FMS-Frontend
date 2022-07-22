@@ -1,8 +1,11 @@
+<img src="../../assets/login-bg.png" alt="bg" id="bg">
+
+
 <div class = "main">
     <div class = "stripe-script">
-        <h2 class = "text-info" style = "text-align: center;">Stripe Payment Gateway</h2>
-        <div>
-          <button (click)="initializePayment(price)" >Payment of Rs. {{price}}</button>
+        <h2 class = "text-info">Stripe Payment Gateway</h2>
+        <div class="paybtn">
+          <button (click)="initializePayment(price)" class="btn btn-primary">Confirm Payment of Rs. {{price}}</button>
         </div>
     </div>
 </div>

@@ -1,9 +1,9 @@
 .div1 {
-  height: 85vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  flex-direction: column;
 }
 
 h2{
@@ -58,4 +58,8 @@ form {
   margin: 0.5rem;
   background-color: #27379b;
   color: white;
+}
+
+.table{
+  margin: 1rem;
 }
