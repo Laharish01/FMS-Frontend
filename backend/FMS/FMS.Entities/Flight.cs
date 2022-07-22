@@ -12,5 +12,9 @@ namespace FMS.Entities
         public string destination { get; set;  }
         public DateTime departure_time { get; set;  }
         public DateTime landing_time { get; set; }
+        public int economy_seats { get; set; }
+        public int business_seats { get; set; }
+        public int economy_price { get; set; }
+        public int business_price { get; set; }
     }
 }

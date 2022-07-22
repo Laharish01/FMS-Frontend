@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Availableflightwithseat } from 'src/app/Model/AvailableFlightWithSeat/availableflightwithseat';
 import { Cities } from 'src/app/Model/Cities/cities';
 import { User } from 'src/app/Model/User/user';
 import { FlightService } from 'src/app/Service/Flight/flight.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map, delay } from 'rxjs/operators';
+import { Flight } from 'src/app/Model/Flight/flight';
+import { UserService } from 'src/app/Service/User/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,8 +20,9 @@ export class HomeComponent implements OnInit {
   flights = false;
   city: Cities[];
   departure_time: Date;
-  available_flights: Availableflightwithseat[];
+  available_flights: Flight[];
   available_seats: number;
+  user:User;
 
   form = new FormGroup({
     source: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -34,7 +36,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private flightService: FlightService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute, 
+    private userService:UserService
   ) {
     this.city = [
       { name: 'Delhi' },
@@ -43,6 +46,7 @@ export class HomeComponent implements OnInit {
       { name: 'Jaipur' },
     ];
     this.username = localStorage.getItem('username');
+    userService.GetUser(this.username).subscribe(res => {this.user = res;});
   }
   get f() {
     return this.form.controls;
@@ -55,11 +59,8 @@ export class HomeComponent implements OnInit {
       //set this in service subscribe call to display the table
       this.flights = true;
 
-      this.flightService.GetFilteredFlights(this.form.value.source, this.form.value.destination, this.form.value.departure_time).subscribe(res => {
+      this.flightService.GetFilteredFlights(this.form.value.source, this.form.value.destination, this.form.value.departure_time, this.user.seat_preference).subscribe(res => {
         this.available_flights = res;
-      });
-      this.flightService.GetCount("6E4569", 'Economy').subscribe(res => {
-        this.available_seats = res;
       });
     } else {
       alert('You have to login first!!!');
@@ -68,7 +69,9 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {}
 
-  book(){
-    
+  book(flight:Flight){
+     console.log(flight);
+     localStorage.setItem("flight", JSON.stringify(flight));
+     this.router.navigateByUrl("booking");
   }
 }

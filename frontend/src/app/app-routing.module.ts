@@ -13,7 +13,7 @@ const routes: Routes = [
   // {path: 'home', component:HomeComponent}, 
   {path: 'signUp',component: SignUpComponent},
   // {path: 'admin', component: AdminComponent}, 
-  {path: 'book', component:BookingComponent},
+  {path: 'booking', component:BookingComponent},
   {path: 'payment', component:PaymentsComponent}, 
   {path:'home', component:HomeComponent},
   {path:'admin/:un', component:AdminComponent}, 

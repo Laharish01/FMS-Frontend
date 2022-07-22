@@ -61,7 +61,7 @@
           <th>Available Seats</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody>     
         <tr *ngFor="let flight of available_flights">
           <td>{{flight.flight_id}}</td>
           <td>{{flight.flight_cmp}}</td>
@@ -69,10 +69,9 @@
           <td>{{flight.destination}}</td>
           <td>{{flight.departure_time | date:'short'}}</td>
           <td>{{flight.landing_time | date:'short'}}</td>
-          <td>{{available_seats}}</td>
-          <td><button class="btn" (onclick)="book()">Book</button></td>
+          <td>{{user.seat_preference == "Economy" ? flight.economy_seats : flight.business_seats}}</td>
+          <td><button type = "button" class="btn" (click)="book(flight)">Book</button></td>
         </tr>
-
       </tbody>
     </table>
 

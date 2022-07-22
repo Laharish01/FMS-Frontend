@@ -21,15 +21,13 @@ export class BookingService {
     return this.httpClient.get<Userbookings[]>(this.api_url + 'getuserbookings/' + username);
   }
   AddPayment(payment:Payment):Observable<any>{
-    return this.httpClient.post(this.api_url + 'addpayment', payment);
+    return this.httpClient.post(this.api_url + 'addpayment/', payment);
   }
-  AddBookedSeat(bs:Bookedseats):Observable<any>{
-    return this.httpClient.post(this.api_url + 'addbookedseat', bs);
+  GetPaymentCount():Observable<any>{
+    return this.httpClient.get(this.api_url + 'getpaymentcount');
   }
-  SetSeatStatus(seat:Seat):Observable<any>{
-    return this.httpClient.put(this.api_url + 'setseatstatus', seat);
-  }
-  AddSeat(seat:Seat):Observable<any>{
-    return this.httpClient.post(this.api_url + 'addseat', seat);
+  GetBookingCount():Observable<any>{
+    return this.httpClient.get(this.api_url + 'getbookingcount');
   }
 }
+

@@ -1,9 +1,9 @@
-<body style = "bg-image: ">
-    <div>
+<div class = "main">
+    <div class = "stripe-script">
         <h2 class = "text-info" style = "text-align: center;">Stripe Payment Gateway</h2>
         <div>
-          <button (click)="initializePayment(2)" >Paymant of $2</button>
+          <button (click)="initializePayment(price)" >Payment of Rs. {{price}}</button>
         </div>
-      </div>
-</body>
+    </div>
+</div>
 

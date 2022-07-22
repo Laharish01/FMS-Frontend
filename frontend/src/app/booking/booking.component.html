@@ -1,1 +1,25 @@
-<p>booking works!</p>
+<div class="main">
+    <h1>Booking Information</h1>
+    <br>
+    <table class = "table table-striped">
+        <thead>
+            <th>Flight ID</th>
+            <th>Flight Company</th>
+            <th>Price</th>
+            <th>Seat Class</th>
+            <th>Departure Time</th>
+            <th>Landing Time</th>
+        </thead>
+        <tbody>
+            <td>{{flight.flight_id}}</td>
+            <td>{{flight.flight_cmp}}</td>
+            <td>{{user.seat_preference == "Economy" ? flight.economy_price : flight.business_price}}</td>
+            <td>{{user.seat_preference}}</td>
+            <td>{{flight.departure_time | date:'short'}}</td>
+            <td>{{flight.landing_time | date:'short'}}</td>
+        </tbody>
+    </table>
+    <div class="confirm">
+        <button type = "button" (click) = "pay()">Proceed to Payment</button>
+    </div>
+</div>

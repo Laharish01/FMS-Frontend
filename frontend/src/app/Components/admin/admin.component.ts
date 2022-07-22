@@ -5,7 +5,7 @@ import { Flight } from 'src/app/Model/Flight/flight';
 import { FlightService } from 'src/app/Service/Flight/flight.service';
 import { Seat } from 'src/app/Model/Seat/seat';
 import { BookingService } from 'src/app/Service/Booking/booking.service';
-import { Availableflightwithseat } from 'src/app/Model/AvailableFlightWithSeat/availableflightwithseat';
+
 
 @Component({
   selector: 'app-admin',
@@ -17,19 +17,16 @@ export class AdminComponent implements OnInit {
   flight: Flight;
   rawseats: string[];
   all_flights: Flight[];
-  available_flights: Availableflightwithseat[];
   source: string;
   destination: string;
   departure_time: Date;
   available_seats: number;
+  available_flights:Flight[];
   constructor(
     private flightService: FlightService,
     private bookingService: BookingService
   ) {
     this.flight = new Flight();
-    this.flightService.GetAllFlights().subscribe((response) => {
-      this.all_flights = response;
-    });
   }
 
   ngOnInit(): void {}
@@ -86,9 +83,7 @@ export class AdminComponent implements OnInit {
         seat.seat_no = i + 1;
         seat.status = false;
 
-        this.bookingService.AddSeat(seat).subscribe((response) => {
-          console.log(response);
-        });
+
       }
     });
   }

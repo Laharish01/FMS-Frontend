@@ -15,14 +15,11 @@ namespace BookingService.Controllers
     {
         private static BookingsDAO BookingsDAO;
         private static PaymentDAO PaymentDAO;
-        private static BookedSeatDAO BookedSeatDAO;
-        private static SeatDAO seatDAO;
+
         public BookingController()
         {
             BookingsDAO = new BookingsDAO();
             PaymentDAO = new PaymentDAO();
-            BookedSeatDAO = new BookedSeatDAO();
-            seatDAO = new SeatDAO();
         }
         //add booking
         [Route("addbooking")]
@@ -57,11 +54,11 @@ namespace BookingService.Controllers
         //add payment info
         [Route("addpayment")]
         [HttpPost]
-        public IActionResult AddPayment(Payment payment)
+        public IActionResult AddPayment(Payment p)
         {
             try
             {
-                PaymentDAO.AddPayment(payment);
+                PaymentDAO.AddPayment(p);
                 return StatusCode(200);
             }
             catch (Exception e)
@@ -70,22 +67,9 @@ namespace BookingService.Controllers
             }
         }
         //add booked seat
-        [Route("addbookedseat")]
-        [HttpPost]
-        public IActionResult AddBookedSeat(BookedSeats bs)
-        {
-            try
-            {
-                BookedSeatDAO.AddBookedSeat(bs);
-                return StatusCode(200);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500, e.Message);
-            }
-        }
+
         //set seat as booked/not booked
-        [Route("setseatstatus")]
+/*        [Route("setseatstatus")]
         [HttpPut]
         public IActionResult SetSeatStatus(Seat seat)
         {
@@ -105,9 +89,9 @@ namespace BookingService.Controllers
             {
                 return StatusCode(500, e.Message);
             }
-        }
+        }*/
         //add new seat
-        [Route("addseat")]
+/*        [Route("addseat")]
         [HttpPost]
         public IActionResult AddSeat(Seat seat)
         {
@@ -119,6 +103,36 @@ namespace BookingService.Controllers
             catch (Exception e)
             {
                 return StatusCode(500, e.Message);
+            }
+        }*/
+
+        [Route("getpaymentcount")]
+        [HttpGet]
+        public IActionResult GetPaymentCount()
+        {
+            try
+            {
+                int size = PaymentDAO.GetSize();
+                return StatusCode(200, size);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [Route("getbookingcount")]
+        [HttpGet]
+        public IActionResult GetBookingCount()
+        {
+            try
+            {
+                int size = BookingsDAO.GetSize();
+                return StatusCode(200, size);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
             }
         }
     }

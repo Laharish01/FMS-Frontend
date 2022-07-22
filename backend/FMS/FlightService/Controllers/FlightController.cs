@@ -21,7 +21,7 @@ namespace FlightService.Controllers
             flightDao = new FlightDAO();
         }
         //get all flights
-        [Route("getallflights")]
+/*        [Route("getallflights")]
         [HttpGet]
         public IActionResult GetAllFlights()
         {
@@ -35,15 +35,15 @@ namespace FlightService.Controllers
 
                 return StatusCode(500, e.Message);
             }
-        }
+        }*/
         // get flights by source and destination
         [Route("getfilteredflights")]
         [HttpGet]
-        public IActionResult GetFlightBySandD(string source, string destination, string departure_time)
+        public IActionResult GetFlightBySandD(string source, string destination, string departure_time, string seat_preference)
         {
             try
             {
-                List<AvailableFlightWithSeat> availableFlights = flightDao.GetFlightsBySandD(source, destination, departure_time);
+                List<Flight> availableFlights = flightDao.GetFlightsBySandD(source, destination, departure_time, seat_preference);
                 return StatusCode(200, availableFlights);
 
             }
@@ -68,14 +68,14 @@ namespace FlightService.Controllers
             }
         }
 
-        [Route("getcount/{flight_id}/{class_type}")]
+        [Route("bookseat/{flight_id}/{seat_type}")]
         [HttpGet]
-        public IActionResult GetCount(string flight_id, string class_type)
+        public IActionResult BookSeat(string flight_id, string class_type)
         {
             try
             {
-                int res = flightDao.GetAvailableSeats(flight_id, class_type);
-                return StatusCode(200, res);
+                flightDao.BookSeat(flight_id, class_type);
+                return StatusCode(200);
             }
             catch(Exception ex)
             {
