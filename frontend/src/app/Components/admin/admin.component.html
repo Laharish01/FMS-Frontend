@@ -1,73 +1,54 @@
 <div class="container">
+    <h1>Welcome to the Admin Page</h1>
+    <br>
+    <h2>Enter Flight Details to add the flight</h2>
+    <br>
     <form [formGroup]="form" (ngSubmit)="addFlight()">
         <div class="form-group">
+            <label for="flight_id">Flight ID</label>
             <input type="text" formControlName="flight_id" class="form-control" placeholder="Enter flight id">
         </div>
         <div class="form-group">
+            <label for="flight_cmp">Flight Company</label>
             <input type="text" formControlName="flight_cmp" class="form-control" placeholder="Enter flight company">
         </div>
         <div class="form-group">
+            <label for="source">Source</label>
             <input type="text" formControlName="source" class="form-control" placeholder="Enter flight source">
         </div>
         <div class="form-group">
+            <label for="destination">Destination</label>
             <input type="text" formControlName="destination" class="form-control"
                 placeholder="Enter flight destination">
         </div>
         <div class="form-group">
-            <input type="datetime" formControlName="departure_time" class="form-control"
+            <label for="departure_time">Departure Time</label>
+            <input type="text" formControlName="departure_time" class="form-control"
                 placeholder="Enter departure time">
         </div>
         <div class="form-group">
-            <input type="datetime" formControlName="landing_time" class="form-control" placeholder="Enter landing time">
+            <label for="landing_time">Landing Time</label>
+            <input type="text" formControlName="landing_time" class="form-control" placeholder="Enter landing time">
+        </div>
+        <div class="form-group">
+            <label for="business_seats">Number of business seats</label>
+            <input type="number" formControlName="business_seats" class="form-control" placeholder="Enter landing time">
+        </div>
+        <div class="form-group">
+            <label for="economy_seats">Number of economy seats</label>
+            <input type="number" formControlName="economy_seats" class="form-control" placeholder="Enter landing time">
+        </div>
+        <div class="form-group">
+            <label for="business_price">Business Seat Price</label>
+            <input type="number" formControlName="business_price" class="form-control" placeholder="Enter landing time">
+        </div>
+        <div class="form-group">
+            <label for="economy_price">Economy Seat Price</label>
+            <input type="number" formControlName="economy_price" class="form-control" placeholder="Enter landing time">
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     </form>
-
-    <form [formGroup]="addseat" (ngSubmit)="addSeats()">
-        <div class="form-group">
-            <input formControlName="seats" type="text" class="form-control"
-            placeholder="Enter type and number in format \B10,E20\ ">
-        </div>
-        <button class="btn" type="submit">Add Seats</button>
-    </form>
 </div>
 
-<div class="flight-list">
-    <form class="srcanddestform">
-        <div class="form-group">
-            <input placeholder="Enter Source" type="text" name="source" [(ngModel)]="source" class="form-control">
-        </div>
-        <div class="form-group">
-            <input placeholder="Enter Destination" type="text" name="destination" [(ngModel)]="destination" class="form-control">
-        </div>
-        <div class="form-group">
-            <input placeholder="Enter departure time" type="date" class="form-control" name="departure_time" [(ngModel)]="departure_time">
-        </div>
-        <button class="btn" (click)="getFlightList()">Search</button>
-    </form>
-    <table class="table table-striped table-inverse table-responsive">
-        <thead class="thead-inverse">
-            <tr>
-                <th>Flight Id</th>
-                <th>Flight Company</th>
-                <th>Source</th>
-                <th>Destination</th>
-                <th>Departure Time</th>
-                <th>Landing Time</th>
-                <th>Available Seats</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let flight of available_flights">
-                    <td>{{flight.flight_id}}</td>
-                    <td>{{flight.flight_cmp}}</td>
-                    <td>{{flight.source}}</td>
-                    <td>{{flight.destination}}</td>
-                    <td>{{flight.departure_time | date:'short'}}</td>
-                    <td>{{flight.landing_time | date:'short'}}</td>
-                    <td>{{available_seats}}</td>
-                </tr>
-                
-            </tbody>
-    </table>
-</div>
+
+    

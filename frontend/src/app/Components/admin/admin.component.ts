@@ -38,63 +38,35 @@ export class AdminComponent implements OnInit {
     destination: new FormControl('', Validators.required),
     departure_time: new FormControl('', Validators.required),
     landing_time: new FormControl('', Validators.required),
+    business_seats: new FormControl('', Validators.required),
+    economy_seats:new FormControl('', Validators.required),
+    business_price: new FormControl('', Validators.required), 
+    economy_price: new FormControl('', Validators.required)
   });
 
-  addseat = new FormGroup({
-    seats: new FormControl('', Validators.pattern('[E,B]d+')),
-  });
 
   get f() {
     return this.form.controls;
   }
 
-  get s() {
-    return this.addseat.controls;
-  }
-
   addFlight() {
     this.submitted = true;
     console.log(this.form.value);
-
     this.flight.flight_id = this.form.value.flight_id;
     this.flight.flight_cmp = this.form.value.flight_cmp;
     this.flight.source = this.form.value.source;
     this.flight.destination = this.form.value.destination;
     this.flight.departure_time = new Date(this.form.value.departure_time);
     this.flight.landing_time = new Date(this.form.value.landing_time);
-
+    this.flight.business_price = Number(this.form.value.business_price);
+    this.flight.economy_price = Number(this.form.value.economy_price);
+    this.flight.economy_seats = Number(this.form.value.economy_seats);
+    this.flight.business_seats = Number(this.form.value.business_seats);
     this.flightService.AddFlight(this.flight).subscribe((response) => {
       console.log(response);
     });
+    this.flight = new Flight();
     this.form.reset();
   }
 
-  async addSeats() {
-    this.rawseats = this.addseat.value.seats.split(',');
-    this.rawseats.forEach((element) => {
-      var total_no = element.substring(1);
-      for (var i = 0; i < Number(total_no); i++) {
-        var seat = new Seat();
-
-        // seat.flight_id = this.flight.flight_id;
-        seat.flight_id = '6E4569';
-        seat.price = element[0] == 'E' ? 3000 : 6000;
-        seat.seat_class = element[0] == 'E' ? 'Economy' : 'Business';
-        seat.seat_no = i + 1;
-        seat.status = false;
-
-
-      }
-    });
-  }
-  getFlightList() {
-    // this.flightService
-    //   .GetFilteredFlights(this.source, this.destination, this.departure_time)
-    //   .subscribe((response) => {
-    //     this.available_flights = response;
-    //   });
-    // this.flightService.GetCount('6E4567').subscribe((response) => {
-    //   this.available_seats = response;
-    // });
-  }
 }
